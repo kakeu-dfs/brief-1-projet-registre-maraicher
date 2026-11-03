@@ -22,7 +22,7 @@ export function listerOperations(operations) {
 
 // Renvoie l'opération qui a cet identifiant, ou undefined si elle n'existe pas.
 export function trouverParId(operations, id) {
-  
+  return operations.find((operation) => operation.id === id);
 }
 
 // Contrôle une saisie AVANT de l'ajouter. Tous les champs arrivent sous forme de TEXTE :
@@ -33,7 +33,32 @@ export function trouverParId(operations, id) {
 // obligatoires (n'importe quel texte non vide) · operation présente dans OPERATIONS
 // · coutFCFA nombre positif ou nul.
 export function verifierOperation(saisie, operations) {
-  throw new Error('TODO : coder verifierOperation dans src/registre.js');
+  const erreur =[];
+const id = String(saisie.id ?? ``).trim();
+const date = string(saisie.date ?? ``).trim();
+const parcelle =string(saisie.parcelle ?? ``).trim()
+const culture = string(saisie.culture ?? ``).trim();
+const cout =versNombre(saisie.coutFCFA ?? ``);
+if(id===``){
+  erreur.push("L'identifiant est obligatoire.");
+} else if (trouverParId(operations, id)){
+  erreur.push(`Lidentifiant <<${id}>> existe déja.`);
+  if(!estDateValide(date)){
+    erreur.push(`La date doit être réelle et au format AAAA-MM-JJ.`);
+  }
+  if(parcelle===``){
+    erreur.push(`La parcelle est obligatoire.`);
+  }
+  if(culture===``){
+    erreur.push(`La culture est obligatoire.`)
+  }
+  if(!OPERATIONS.includes(operations)){
+    erreur.push(`Operation invalide, Valeurs acceptées : ${OPERATIONS.join(`,`)},`)
+  }
+  if(Number.isNaN(cout) || cout <0){
+    erreur.push(`Le cout doit être un nombre positif ou nul.`)
+  }
+} return erreur
 }
 
 // Fabrique l'opération à enregistrer à partir d'une saisie VALIDE : coutFCFA devient un nombre.
