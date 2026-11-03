@@ -14,12 +14,15 @@ export function formaterOperation(operation) {
 // Renvoie un texte avec une opération par ligne (lignes séparées par '\n'),
 // ou 'Aucune opération enregistrée.' si la liste est vide.
 export function listerOperations(operations) {
-  return operations.length === 0 ? 'Aucune operation enregistrée.' : operations.map(formaterOperation).join('\n');
+  if( operations.length === 0 ){
+    return 'Aucune operation enregistrée.'
+   }
+   return operations.map(formaterOperation).join('\n');
 }
 
 // Renvoie l'opération qui a cet identifiant, ou undefined si elle n'existe pas.
 export function trouverParId(operations, id) {
-  throw new Error('TODO : coder trouverParId dans src/registre.js');
+  
 }
 
 // Contrôle une saisie AVANT de l'ajouter. Tous les champs arrivent sous forme de TEXTE :
