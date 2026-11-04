@@ -28,7 +28,7 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 - [x] Lister les opérations, message si le registre est vide
 - [x] Rechercher par identifiant ou par parcelle ; filtrer par culture
 - [x] Trier par coût ou par date
-- [ ] Synthèse : total, nombre et total par parcelle, coût minimum et maximum
+- [x] Synthèse : total, nombre et total par parcelle, coût minimum et maximum
 - [ ] Bonus : supprimer et modifier une opération (choix 6 et 7)
 - [ ] Bonus : tri par coût décroissant, parcelle la plus coûteuse
 

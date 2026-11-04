@@ -78,5 +78,13 @@
     "culture": "aubergine",
     "operation": "désherbage",
     "coutFCFA": 6000
+  },
+  {
+    "id": "011",
+    "date": "2026-11-24",
+    "parcelle": "p1",
+    "culture": "tomate",
+    "operation": "semis",
+    "coutFCFA": 3000
   }
 ]
