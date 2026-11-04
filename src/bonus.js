@@ -11,8 +11,15 @@ export const CHAMPS_MODIFIABLES = ['date', 'parcelle', 'culture', 'operation', '
 // Supprime du registre l'opération qui a cet identifiant.
 // Renvoie l'opération supprimée, ou undefined si elle n'existe pas (le registre ne change pas).
 export function supprimerOperation(operations, id) {
-  throw new Error('TODO Bonus : coder supprimerOperation dans src/bonus.js');
-}
+  const index = operations.findIndex((op )=> op.id === id);
+
+  if (index === -1) {
+    return undefined;
+  }
+
+  return operations.splice(index, 1)[0];
+};
+
 
 // Modifie UN champ d'une opération. La nouvelle valeur arrive sous forme de TEXTE et suit
 // les mêmes règles qu'à l'ajout. Renvoie les erreurs : [] si la modification est faite ;
@@ -20,8 +27,24 @@ export function supprimerOperation(operations, id) {
 // Erreurs : identifiant introuvable · champ 'id' (non modifiable) · champ absent de CHAMPS_MODIFIABLES
 //           · valeur refusée par les règles de l'ajout.
 export function modifierOperation(operations, id, champ, valeur) {
-  throw new Error('TODO Bonus : coder modifierOperation dans src/bonus.js');
-}
+  const operation = operations.find((op) => op.id === id);
+
+  if (!operation) {
+    return ['identifiant introuvable'];
+  }
+
+  if (champ === 'id') {
+    return ["champ 'id' non modifiable"];
+  }
+
+  if (!CHAMPS_MODIFIABLES.includes(champ)) {
+    return ['champ non modifiable'];
+  }
+
+  operation[champ] = valeur;
+
+  return [];
+};
 
 // Renvoie une COPIE triée par coût décroissant : la plus chère d'abord.
 export function trierParCoutDecroissant(operations) {
