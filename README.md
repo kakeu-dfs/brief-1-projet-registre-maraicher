@@ -4,7 +4,7 @@
 
 ## Contexte
 
-✏️ *En cinq à huit phrases : qui utilise l'outil (son métier, son geste professionnel), son besoin, ce qu'il saisit, ce que le programme lui affiche, ce que l'outil ne fait pas.*
+Cet outil est utilisé par un maraîcher pour enregistrer les opérations réalisées sur ses parcelles de culture. Il lui permet de conserver un historique des travaux effectués et des coûts associés. L'utilisateur saisit un identifiant, une date, une parcelle, une culture, un type d'opération et un coût. Le programme enregistre ces informations et peut afficher la liste des opérations enregistrées. Il aide à suivre les dépenses liées aux cultures. En revanche, il ne gère pas les ventes des récoltes ni les revenus. Il ne permet donc pas de calculer la rentabilité de l'exploitation.
 
 ## Prérequis et lancement
 
@@ -23,11 +23,11 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ✏️ *Cochez seulement ce qui marche : `- [x]`.*
 
-- [ ] Données lues et enregistrées dans `donnees/operations.json`
-- [ ] Ajouter une opération, saisies invalides refusées sans arrêter le programme
-- [ ] Lister les opérations, message si le registre est vide
-- [ ] Rechercher par identifiant ou par parcelle ; filtrer par culture
-- [ ] Trier par coût ou par date
+- [x] Données lues et enregistrées dans `donnees/operations.json`
+- [x] Ajouter une opération, saisies invalides refusées sans arrêter le programme
+- [x] Lister les opérations, message si le registre est vide
+- [x] Rechercher par identifiant ou par parcelle ; filtrer par culture
+- [x] Trier par coût ou par date
 - [ ] Synthèse : total, nombre et total par parcelle, coût minimum et maximum
 - [ ] Bonus : supprimer et modifier une opération (choix 6 et 7)
 - [ ] Bonus : tri par coût décroissant, parcelle la plus coûteuse
@@ -38,12 +38,14 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 
 ## Limites
 
-✏️ *Au moins trois. Par exemple : le registre enregistre des dépenses, pas les revenus, il ne mesure donc pas la rentabilité.*
-
+Le registre enregistre uniquement les dépenses et non les revenus.
+Il ne permet donc pas de calculer la rentabilité d'une culture.
+Les stocks de recoltes ne sont pas enregistrés
+Les informations météorologiques et hygrometriques ne sont pas prises en compte
 ## Documents
 
 [Dictionnaire des données](docs/dictionnaire-donnees.md) · [Tâches](docs/taches.md) · [Relevé des tests](docs/releve-tests.md) · [Journal de recherche](docs/journal-recherche.md) · [Fiche agronomique](docs/fiche-agronomique.md) · [Fiche individuelle](docs/fiche-individuelle.md)
 
 ## Auteur
 
-✏️ *Prénom NOM, compte GitHub. Entraide : avec qui, sur quoi.*
+Kakeu Zran Bruce, compte GitHub. Entraide : avec qui, sur quoi.*
