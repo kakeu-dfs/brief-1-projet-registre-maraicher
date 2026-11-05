@@ -15,7 +15,7 @@ import {
   trierParCoutDecroissant,
 } from './src/bonus.js';
 
-const FICHIER_DONNEES = 'donnees/operations.json';
+const FICHIERdesDONNEES = 'donnees/operations.json';
 
 async function main() {
   ouvrirSaisie();
@@ -27,13 +27,13 @@ async function main() {
   console.log('==================================================');
 
   try {
-    operations = await chargerJson(FICHIER_DONNEES);
+    operations = await chargerJson(FICHIERdesDONNEES);
     console.log(
-      `${operations.length} opération(s) chargée(s) depuis ${FICHIER_DONNEES}.`,
+      `${operations.length} opération(s) chargée(s) depuis ${FICHIERdesDONNEES}.`,
     );
   } catch (erreur) {
     console.log(
-      `Impossible de lire ${FICHIER_DONNEES} : ${erreur.message}. Le registre démarre vide.`,
+      `Impossible de lire ${FICHIERdesDONNEES} : ${erreur.message}. Le registre démarre vide.`,
     );
     operations = [];
   }
@@ -51,8 +51,6 @@ async function main() {
       console.log('5. Synthèse des dépenses');
       console.log('6. Supprimer une opération');
       console.log('7. Modifier une opération');
-      console.log('8. Trier par coût décroissant');
-      console.log('9. Afficher la parcelle la plus coûteuse');
       console.log('0. Quitter');
 
       const choix = await demander('Votre choix : ');
@@ -88,7 +86,7 @@ async function main() {
             if (erreurs.length > 0) {
               erreurs.forEach((erreur) => console.log(erreur));
             } else {
-              await enregistrerJson(FICHIER_DONNEES, operations);
+              await enregistrerJson(FICHIERdesDONNEES, operations);
               console.log('Opération ajoutée.');
             }
             break;
@@ -149,33 +147,51 @@ async function main() {
           }
 
           case '4': {
-            const critere = await demander('Trier par (cout, date) : ');
+          console.log('1. Coût croissant');
+          console.log('2. Coût décroissant');
+          console.log('3. Date (de la plus ancienne à la plus récente)');
+
+          const critere = await demander('Votre choix : ');
 
             if (critere === null) {
-              console.log('Au revoir !');
-              continuer = false;
+             console.log('Au revoir !');
+            continuer = false;
+              break;
+           }
+
+             if (critere === '1') {
+            console.log(
+             listerOperations(trierParCout(operations))
+              );
+
+              } else if (critere === '2') {
+            console.log(
+             listerOperations(trierParCoutDecroissant(operations))
+              );
+
+              } else if (critere === '3') {
+               console.log(
+               listerOperations(trierParDate(operations))
+               );
+
+               } else {
+              console.log('Choix invalide.');
+             }
+
               break;
             }
-
-            if (critere === 'cout') {
-              console.log(listerOperations(trierParCout(operations)));
-            } else if (critere === 'date') {
-              console.log(listerOperations(trierParDate(operations)));
-            } else {
-              console.log('Critère inconnu.');
-            }
-            break;
-          }
 
           case '5': {
             console.log(`Total des coûts : ${totalCouts(operations)} FCFA`);
             console.log('Coût minimum et maximum :', coutMinMax(operations));
             console.log('Synthèse par parcelle :', syntheseParParcelle(operations));
+            console.log('la parcelle la plus couteuse est (en FCFA) :', parcelleLaPlusCouteuse(operations),)
+
             break;
           }
 
           case '6': {
-            const id = await demander('Identifiant de l’opération à supprimer : ');
+            const id = await demander('Identifiant de l\'opération à supprimer : ');
             if (id === null) {
               console.log('Au revoir !');
               continuer = false;
@@ -188,13 +204,13 @@ async function main() {
               break;
             }
 
-            await enregistrerJson(FICHIER_DONNEES, operations);
+            await enregistrerJson(FICHIERdesDONNEES, operations);
             console.log(`Opération supprimée : ${formaterOperation(operationSupprimee)}`);
             break;
           }
 
           case '7': {
-            const id = await demander('Identifiant de l’opération à modifier : ');
+            const id = await demander('Identifiant de l\'opération à modifier : ');
             if (id === null) {
               console.log('Au revoir !');
               continuer = false;
@@ -221,27 +237,13 @@ async function main() {
             if (erreurs.length > 0) {
               erreurs.forEach((erreur) => console.log(erreur));
             } else {
-              await enregistrerJson(FICHIER_DONNEES, operations);
+              await enregistrerJson(FICHIERdesDONNEES, operations);
               console.log('Opération modifiée.');
             }
             break;
           }
 
-          case '8':
-            console.log(listerOperations(trierParCoutDecroissant(operations)));
-            break;
-
-          case '9': {
-            const resultat = parcelleLaPlusCouteuse(operations);
-            if (resultat === null) {
-              console.log('Aucune opération enregistrée.');
-            } else {
-              console.log(
-                `Parcelle la plus coûteuse : ${resultat.parcelle} — ${resultat.total} FCFA`,
-              );
-            }
-            break;
-          }
+        
 
           default:
             console.log(
@@ -249,16 +251,13 @@ async function main() {
             );
         }
       } catch (erreur) {
-        if (erreur.message?.startsWith('TODO')) {
-          console.log(`À compléter : ${erreur.message}`);
-        } else {
-          console.log(`Erreur inattendue : ${erreur.message}`);
-        }
+  console.log('Erreur : ' + erreur.message);
+
       }
     }
   } finally {
   fermerSaisie();
 }
-}
 
-main();
+
+}main();
