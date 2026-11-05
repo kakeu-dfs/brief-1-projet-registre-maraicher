@@ -29,12 +29,16 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 - [x] Rechercher par identifiant ou par parcelle ; filtrer par culture
 - [x] Trier par coût ou par date
 - [x] Synthèse : total, nombre et total par parcelle, coût minimum et maximum
-- [ ] Bonus : supprimer et modifier une opération (choix 6 et 7)
-- [ ] Bonus : tri par coût décroissant, parcelle la plus coûteuse
+- [x] Bonus : supprimer et modifier une opération (choix 6 et 7)
+- [x] Bonus : tri par coût décroissant, parcelle la plus coûteuse
 
 ## Données
 
-✏️ *Le fichier, le nombre d'opérations, les champs (voir [docs/dictionnaire-donnees.md](docs/dictionnaire-donnees.md)), les unités. Rappelez qu'elles sont fictives.*
+`fichier`: operation.json
+`Le nombre d'operation`: 5
+`Champs`: id, parcelle, culture, operation, cout
+`Les unités` 
+NB : les données utiliées sont fictives
 
 ## Limites
 
@@ -48,4 +52,6 @@ Les informations météorologiques et hygrometriques ne sont pas prises en compt
 
 ## Auteur
 
-Kakeu Zran Bruce, compte GitHub. Entraide : avec qui, sur quoi.*
+Kakeu Zran Bruce, compte GitHub: Kakeu-dfs. 
+Entraide : Viegnekou koffi bogar, Liade marc enoc, Yao mondesir, Koutouan Ange, Assie konan cedric, Moukie ble adolph : travail d'explication et de comprehension de l'exercice, codage.
+

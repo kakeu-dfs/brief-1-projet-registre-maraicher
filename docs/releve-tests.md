@@ -8,9 +8,10 @@
 
 | Action | Attendu | Obtenu | Testeur |
 | --- | --- | --- | --- |
-| ✏️ | | | |
-| ✏️ | | | |
-| ✏️ | | | |
+| Ajout de (011) | operation ajouté| nouvelle operation enregistrer | |
+| Choisir 0| quitter le menu| message d'aurevoir | |
+|ajout de (AB) |message d'erreur | erreur0
+| |
 | ✏️ | | | |
 | ✏️ | | | |
 | ✏️ | | | |
