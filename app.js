@@ -182,10 +182,13 @@ async function main() {
             }
 
           case '5': {
+            console.log("--- Synthese des opération enregistrées ---")
+            console.log(`Le nombre d'opération enregistrées est : ${operations.length}`)
             console.log(`Total des coûts : ${totalCouts(operations)} FCFA`);
             console.log('Coût minimum et maximum :', coutMinMax(operations));
             console.log('Synthèse par parcelle :', syntheseParParcelle(operations));
             console.log('la parcelle la plus couteuse est (en FCFA) :', parcelleLaPlusCouteuse(operations),)
+            console.log("Rappel : ce sont des dépenses. Sans les revenus, elles ne mesurent pas la rentabilité")
 
             break;
           }
