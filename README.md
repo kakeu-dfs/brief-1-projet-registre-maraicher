@@ -35,10 +35,10 @@ Sous PowerShell, si `npm` est bloqué : `npm.cmd test`.
 ## Données
 
 `fichier`: operation.json
-`Le nombre d'operation`: 5
+`Le nombre d'operation`: 4
 `Champs`: id, parcelle, culture, operation, cout
-`Les unités` 
-NB : les données utiliées sont fictives
+`Les unités` FCFA 
+NB : les données utilisées sont fictives
 
 ## Limites
 
@@ -53,5 +53,12 @@ Les informations météorologiques et hygrometriques ne sont pas prises en compt
 ## Auteur
 
 Kakeu Zran Bruce, compte GitHub: Kakeu-dfs. 
-Entraide : Viegnekou koffi bogar, Liade marc enoc, Yao mondesir, Koutouan Ange, Assie konan cedric, Moukie ble adolph : travail d'explication et de comprehension de l'exercice, codage.
+Entraide : 
+Viegnekou koffi bogar,
+Liade marc enoc,
+Yao mondesir, 
+Koutouan Ange, 
+Assie konan cedric, 
+Moukie ble adolph : 
+travail groupe explication et de comprehension de l'exercice, codage.
 
