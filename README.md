@@ -59,6 +59,7 @@ Liade marc enoc,
 Yao mondesir, 
 Koutouan Ange, 
 Assie konan cedric, 
-Moukie ble adolph : 
-travail groupe explication et de comprehension de l'exercice, codage.
+Moukie ble adolph 
+Kouassi anglovia: 
+travail groupe, explication et de comprehension de l'exercice, codage.
 

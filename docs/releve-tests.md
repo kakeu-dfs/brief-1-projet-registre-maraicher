@@ -8,11 +8,11 @@
 
 | Action | Attendu | Obtenu | Testeur |
 | --- | --- | --- | --- |
-| Ajout de (011) | operation ajouté| nouvelle operation enregistrer | |
-| Choisir 0| quitter le menu| message d'aurevoir | |
-|trie par cout decroissant |tableau des couts| |
-| npm run test|tout les 39 tests sortent vert |tout les sortent sont verts | |
-| lancement de node app.js|le menu doit s'afficher dans le terminal | le menu s'affiche| |
-| synthese par parcelle|le sous menu s'affiche |possibilité de trie | |
+| Ajout de (011) | operation ajouté| nouvelle operation enregistrer |Viegnekou koffi|
+| Choisir 0| quitter le menu| message d'aurevoir |Viegnekou koffi|
+|trie par cout decroissant |tableau des couts| Viegnekou koffi|
+| npm run test|tout les 39 tests sortent vert |tout les sortent sont verts | Viegnekou koffi|
+| lancement de node app.js|le menu doit s'afficher dans le terminal | le menu s'affiche|Viegnekou koffi|
+| synthese par parcelle|le sous menu s'affiche |possibilité de trie |Viegnekou koffi|
 
-**Sur un autre poste** (`git clone`, `node app.js`, `npm test`, en suivant le README) : ✏️
+**Sur un autre poste** (`git clone`, `node app.js`, `npm test`, en suivant le README) : 
